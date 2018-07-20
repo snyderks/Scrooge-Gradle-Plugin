@@ -1,0 +1,1 @@
+Warning: Task type 'indi.lycoris.ScroogeCompileTask': property 'sourceDir' is not annotated with an input or output annotation.

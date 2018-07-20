@@ -1,0 +1,17 @@
+products:
+   src/main/scala/indi/lycoris/ScroogeCompileTask.scala -> build/classes/scala/main/indi/lycoris/ScroogeCompileTask.class
+   src/main/scala/indi/lycoris/ScroogePlugin.scala -> build/classes/scala/main/indi/lycoris/ScroogePlugin.class
+binary dependencies:
+   src/main/scala/indi/lycoris/ScroogeCompileTask.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/rt.jar
+   src/main/scala/indi/lycoris/ScroogeCompileTask.scala -> /Users/lycoris/.gradle/caches/4.4/generated-gradle-jars/gradle-api-4.4.jar
+   src/main/scala/indi/lycoris/ScroogeCompileTask.scala -> /Users/lycoris/.gradle/caches/modules-2/files-2.1/com.twitter/scrooge-generator_2.12/4.18.0/d456f18b5c478b6356e2e09f4be4784cd4f05765/scrooge-generator_2.12-4.18.0.jar
+   src/main/scala/indi/lycoris/ScroogeCompileTask.scala -> /Users/lycoris/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.1/dd235d04037dc6f4b6090257872dd35359a563ce/scala-library-2.12.1.jar
+   src/main/scala/indi/lycoris/ScroogePlugin.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/rt.jar
+   src/main/scala/indi/lycoris/ScroogePlugin.scala -> /Users/lycoris/.gradle/caches/4.4/generated-gradle-jars/gradle-api-4.4.jar
+   src/main/scala/indi/lycoris/ScroogePlugin.scala -> /Users/lycoris/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.1/dd235d04037dc6f4b6090257872dd35359a563ce/scala-library-2.12.1.jar
+source dependencies:
+   src/main/scala/indi/lycoris/ScroogePlugin.scala -> src/main/scala/indi/lycoris/ScroogeCompileTask.scala
+external dependencies:
+class names:
+   src/main/scala/indi/lycoris/ScroogeCompileTask.scala -> indi.lycoris.ScroogeCompileTask
+   src/main/scala/indi/lycoris/ScroogePlugin.scala -> indi.lycoris.ScroogePlugin

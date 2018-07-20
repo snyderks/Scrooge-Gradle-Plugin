@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>indi.lycoris.scrooge</groupId>
+  <artifactId>indi.lycoris.scrooge.gradle.plugin</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20180713081232</lastUpdated>
+  </versioning>
+</metadata>
