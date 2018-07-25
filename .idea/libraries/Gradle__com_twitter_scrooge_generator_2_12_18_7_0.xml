@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.twitter:scrooge-generator_2.12:18.7.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twitter/scrooge-generator_2.12/18.7.0/d0d27346736e331be5fcf9565da0d45de53d5702/scrooge-generator_2.12-18.7.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twitter/scrooge-generator_2.12/18.7.0/e74a765f410d9f9c6faac5574b71829be353507/scrooge-generator_2.12-18.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

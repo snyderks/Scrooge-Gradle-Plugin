@@ -18,22 +18,22 @@ plugins {
 
 
 
-apply plugin: "com.gradle.plugin-publish"
+apply plugin: "maven-publish"
 
 
 
 sourceCompatibility = 1.8
 
 repositories {
-    //mavenCentral()
-    //mavenLocal()
+    mavenCentral()
+    mavenLocal()
     jcenter()
 }
 
 dependencies {
 
     compile gradleApi()
-    compile 'com.twitter:scrooge-generator_' + '2.12' + ':' + '4.18.0'
+    compile 'com.twitter:scrooge-generator_' + '2.12' + ':' + '18.7.0'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
@@ -41,45 +41,30 @@ gradlePlugin{
     plugins{
         javaPlugin{
             id = 'io.lycoris.scrooge-gradle-plugin'
-            implementationClass = 'com.bytedance.lycoris.ScroogePlugin'
+            implementationClass = 'io.lycoris.ScroogePlugin'
         }
     }
 }
+group 'io.lycoris'
+version '0.1.0'
 
-//publish to local
-//publishing{
-//    publications{
-//        pluginPublication(MavenPublication){
-//            from        components.java
-//            groupId     'io.lycoris'
-//            artifactId  'scrooge-gradle-plugin'
-//            version     '0.1.0'
+
+//pluginBundle{
+//    website = 'http://www.gradle.org/'
+//    vcsUrl = 'https://github.com/gradle/gradle'
+//    description = 'A gradle plugin for compiling Thrift to Java using Scrooge '
+//    tags = ['Thrift', 'Scrooge']
 //
+//    plugins {
+//        javaPlugin {
+//            id = 'io.lycoris.scrooge-gradle-plugin'
+//            displayName = 'Scrooge Gradle Plugin'
+//            version = '0.1.1'
 //        }
 //    }
-//    repositories {
-//        maven{
-//            url "https://plugins.gradle.org/m2/"
-//        }
+//    mavenCoordinates {
+//        groupId = "io.lycoris"
+//        artifactId = "scrooge-gradle-plugin"
+//        version = "0.1.1"
 //    }
 //}
-
-pluginBundle{
-    website = 'http://www.gradle.org/'
-    vcsUrl = 'https://github.com/gradle/gradle'
-    description = 'A gradle plugin for compiling Thrift to Java using Scrooge '
-    tags = ['Thrift', 'Scrooge']
-
-    plugins {
-        javaPlugin {
-            id = 'io.lycoris.scrooge-gradle-plugin'
-            displayName = 'Scrooge Gradle Plugin'
-            version = '0.1.0'
-        }
-    }
-    mavenCoordinates {
-        groupId = "io.lycoris"
-        artifactId = "scrooge-gradle-plugin"
-        version = "0.1.0"
-    }
-}
