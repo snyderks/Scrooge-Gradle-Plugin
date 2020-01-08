@@ -22,25 +22,31 @@ public class ScroogeCompileTask extends DefaultTask {
     private String _lang = "java";
 
     @OutputDirectory
-    private File getDest() { return _dest ; }
+    private File getDest() {
+        return _dest;
+    }
 
-    public void setDest(File destinationDirectory){
+    public void setDest(File destinationDirectory) {
         _dest = destinationDirectory;
     }
 
 
     @InputFiles
-    private Iterable<File> getThriftFiles() { return _files; }
+    private Iterable<File> getThriftFiles() {
+        return _files;
+    }
 
-    public void setThriftFiles(Iterable<File> files){
+    public void setThriftFiles(Iterable<File> files) {
         _files = files;
     }
 
     @Input
     @Optional
-    private List<String> getOpts() {return  _opts; }
+    private List<String> getOpts() {
+        return _opts;
+    }
 
-    public void setOpts(List<String> opts){
+    public void setOpts(List<String> opts) {
         _opts = opts;
     }
 
@@ -49,7 +55,7 @@ public class ScroogeCompileTask extends DefaultTask {
         String destination = getDest().getAbsolutePath();
         List<String> thriftFiles = new ArrayList<>();
 
-        for(File item : _files){
+        for (File item : _files) {
             thriftFiles.add(item.getAbsolutePath());
         }
 
@@ -63,8 +69,8 @@ public class ScroogeCompileTask extends DefaultTask {
         List<String> args = new ArrayList<>();
         args.addAll(_opts);
         args.addAll(thriftFiles);
- 
-        Main.parseOptions(compiler,JavaConverters.asScalaIteratorConverter(args.iterator()).asScala().toSeq());
+
+        Main.parseOptions(compiler, JavaConverters.asScalaIteratorConverter(args.iterator()).asScala().toSeq());
 
         compiler.run();
     }

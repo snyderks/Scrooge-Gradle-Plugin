@@ -1,10 +1,10 @@
-buildscript{
+buildscript {
     repositories {
-        maven{
+        maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
-    dependencies{
+    dependencies {
         classpath "com.gradle.publish:plugin-publish-plugin:0.9.10"
     }
 }
@@ -16,11 +16,7 @@ plugins {
     id 'scala'
 }
 
-
-
 apply plugin: "maven-publish"
-
-
 
 sourceCompatibility = 1.8
 
@@ -31,15 +27,14 @@ repositories {
 }
 
 dependencies {
-
     compile gradleApi()
     compile 'com.twitter:scrooge-generator_' + '2.12' + ':' + '18.7.0'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-gradlePlugin{
-    plugins{
-        javaPlugin{
+gradlePlugin {
+    plugins {
+        javaPlugin {
             id = 'io.lycoris.scrooge-gradle-plugin'
             implementationClass = 'io.lycoris.ScroogePlugin'
         }
@@ -49,22 +44,17 @@ group 'io.lycoris'
 version '0.1.0'
 
 
-//pluginBundle{
-//    website = 'http://www.gradle.org/'
-//    vcsUrl = 'https://github.com/gradle/gradle'
-//    description = 'A gradle plugin for compiling Thrift to Java using Scrooge '
-//    tags = ['Thrift', 'Scrooge']
-//
-//    plugins {
-//        javaPlugin {
-//            id = 'io.lycoris.scrooge-gradle-plugin'
-//            displayName = 'Scrooge Gradle Plugin'
-//            version = '0.1.1'
-//        }
-//    }
-//    mavenCoordinates {
-//        groupId = "io.lycoris"
-//        artifactId = "scrooge-gradle-plugin"
-//        version = "0.1.1"
-//    }
-//}
+pluginBundle {
+    website = 'https://github.com/grzegorzkurtyka/Scrooge-Gradle-Plugin/'
+    vcsUrl = 'https://github.com/grzegorzkurtyka/Scrooge-Gradle-Plugin'
+    description = 'A gradle plugin for compiling Thrift to Java using Scrooge '
+    tags = ['Thrift', 'Scrooge']
+
+    plugins {
+        javaPlugin {
+            id = 'io.lycoris.scrooge-gradle-plugin'
+            displayName = 'Scrooge Gradle Plugin'
+            version = '0.1.1'
+        }
+    }
+}

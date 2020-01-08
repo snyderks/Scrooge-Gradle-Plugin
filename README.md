@@ -5,10 +5,9 @@ Mainly for Java, writen in Java.
 
 usage:
 
-build.gradle:
+`build.gradle`:
   
-  
-  
+```  
   compileScrooge{
 
     thriftFiles = fileTree(dir: "./src/main/thrift", include: "**/*.thrift")
@@ -17,8 +16,4 @@ build.gradle:
     
     opts = []    //default Java code, ["-l","scala"] for scala code
   }
-
-
-
-
-
+```

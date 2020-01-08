@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Gradle 1" modules="scrooge-gradle-plugin_main,scrooge-gradle-plugin_test">
+    <profile name="Gradle 1" modules="scrooge-gradle-plugin.main,scrooge-gradle-plugin.test">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
       <parameters>
