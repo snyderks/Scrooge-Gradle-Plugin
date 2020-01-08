@@ -46,8 +46,8 @@ group 'io.lycoris'
 version scroogeVersion
 
 pluginBundle {
-    website = 'https://github.com/grzegorzkurtyka/Scrooge-Gradle-Plugin/'
-    vcsUrl = 'https://github.com/grzegorzkurtyka/Scrooge-Gradle-Plugin'
+    website = 'https://github.com/schibsted/Scrooge-Gradle-Plugin/'
+    vcsUrl = 'https://github.com/schibsted/Scrooge-Gradle-Plugin'
     description = 'A gradle plugin for compiling Thrift to Java using Scrooge '
     tags = ['Thrift', 'Scrooge']
 
