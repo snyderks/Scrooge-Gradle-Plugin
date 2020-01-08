@@ -7,12 +7,14 @@ buildscript {
     dependencies {
         classpath "com.gradle.publish:plugin-publish-plugin:0.9.10"
     }
+    ext.scalaMainVersion = '2.12'
 }
 
 plugins {
     id 'java'
     id 'maven-publish'
     id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.1'
     id 'scala'
 }
 
@@ -28,21 +30,20 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'com.twitter:scrooge-generator_' + '2.12' + ':' + '18.7.0'
+    compile 'com.twitter:scrooge-generator_' + '2.12' + ':' + scroogeVersion
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 gradlePlugin {
     plugins {
-        javaPlugin {
-            id = 'io.lycoris.scrooge-gradle-plugin'
+        ScroogeGradlePlugin {
+            id = 'io.schibsted.scrooge-gradle-plugin'
             implementationClass = 'io.lycoris.ScroogePlugin'
         }
     }
 }
 group 'io.lycoris'
-version '0.1.0'
-
+version scroogeVersion
 
 pluginBundle {
     website = 'https://github.com/grzegorzkurtyka/Scrooge-Gradle-Plugin/'
@@ -51,10 +52,9 @@ pluginBundle {
     tags = ['Thrift', 'Scrooge']
 
     plugins {
-        javaPlugin {
-            id = 'io.lycoris.scrooge-gradle-plugin'
+        ScroogeGradlePlugin {
             displayName = 'Scrooge Gradle Plugin'
-            version = '0.1.1'
+            version = scroogeVersion
         }
     }
 }

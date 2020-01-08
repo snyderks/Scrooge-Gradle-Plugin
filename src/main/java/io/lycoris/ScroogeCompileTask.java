@@ -5,7 +5,7 @@ import org.gradle.api.tasks.*;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import scala.collection.JavaConverters;
@@ -17,8 +17,8 @@ import com.twitter.scrooge.Main;
 
 public class ScroogeCompileTask extends DefaultTask {
     private File _dest = new File("/src/gen/java/");
-    private Iterable<File> _files = Arrays.asList(new File("/src/main/thrift/"));
-    private List<String> _opts = Arrays.asList("-v");
+    private Iterable<File> _files = Collections.singletonList(new File("/src/main/thrift/"));
+    private List<String> _opts = Collections.singletonList("-v");
     private String _lang = "java";
 
     @OutputDirectory
