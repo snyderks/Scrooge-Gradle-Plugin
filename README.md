@@ -8,12 +8,9 @@ usage:
 `build.gradle`:
   
 ```  
-  compileScrooge{
-
+compileScrooge {
     thriftFiles = fileTree(dir: "./src/main/thrift", include: "**/*.thrift")
-    
     dest = file("src/gen/java")
-    
     opts = []    //default Java code, ["-l","scala"] for scala code
-  }
+}
 ```

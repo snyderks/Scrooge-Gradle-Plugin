@@ -42,7 +42,7 @@ gradlePlugin {
         }
     }
 }
-group 'io.lycoris'
+group 'io.schibsted'
 version scroogeVersion
 
 pluginBundle {
@@ -54,6 +54,7 @@ pluginBundle {
     plugins {
         ScroogeGradlePlugin {
             displayName = 'Scrooge Gradle Plugin'
+            id = 'io.schibsted.scrooge-gradle-plugin'
             version = scroogeVersion
         }
     }
