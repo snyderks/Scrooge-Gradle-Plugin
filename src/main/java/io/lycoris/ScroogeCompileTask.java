@@ -32,7 +32,7 @@ public class ScroogeCompileTask extends DefaultTask {
 
 
     @InputFiles
-    private Iterable<File> getThriftFiles() {
+    public Iterable<File> getThriftFiles() {
         return _files;
     }
 
@@ -42,7 +42,7 @@ public class ScroogeCompileTask extends DefaultTask {
 
     @Input
     @Optional
-    private List<String> getOpts() {
+    public List<String> getOpts() {
         return _opts;
     }
 
