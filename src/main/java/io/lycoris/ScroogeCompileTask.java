@@ -22,7 +22,7 @@ public class ScroogeCompileTask extends DefaultTask {
     private String _lang = "java";
 
     @OutputDirectory
-    private File getDest() {
+    public File getDest() {
         return _dest;
     }
 
