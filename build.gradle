@@ -37,13 +37,13 @@ dependencies {
 gradlePlugin {
     plugins {
         ScroogeGradlePlugin {
-            id = 'io.schibsted.scrooge-gradle-plugin'
+            id = 'com.github.snyderks.scrooge-gradle-plugin'
             implementationClass = 'io.lycoris.ScroogePlugin'
         }
     }
 }
-group 'io.schibsted'
-version scroogeVersion
+group 'com.github.snyderks'
+version '20.5.1'
 
 pluginBundle {
     website = 'https://github.com/schibsted/Scrooge-Gradle-Plugin/'
