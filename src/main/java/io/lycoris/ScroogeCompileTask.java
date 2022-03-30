@@ -1,18 +1,28 @@
 package io.lycoris;
 
+import com.twitter.scrooge.CompilerDefaults;
+import com.twitter.scrooge.Main$;
+import com.twitter.scrooge.ScroogeConfig;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.*;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
+import java.util.Map;
+
+import scala.Option;
 import scala.collection.JavaConverters;
 
 
 import com.twitter.scrooge.Compiler;
 import com.twitter.scrooge.Main;
+import scala.collection.immutable.List$;
+import scala.collection.immutable.Map$;
+import scala.collection.immutable.Seq$;
 
 
 public class ScroogeCompileTask extends DefaultTask {
@@ -61,16 +71,27 @@ public class ScroogeCompileTask extends DefaultTask {
 
         thriftFiles.forEach(item -> System.out.println(item));
 
-        Compiler compiler = new Compiler();
-        compiler.destFolder_$eq(destination);
-        compiler.language_$eq(_lang);
-
-
-        List<String> args = new ArrayList<>();
-        args.addAll(_opts);
-        args.addAll(thriftFiles);
-
-        Main.parseOptions(compiler, JavaConverters.asScalaIteratorConverter(args.iterator()).asScala().toSeq());
+        Option<String> opt = Option.empty();
+        Map<String, String> m = new HashMap<>();
+        ScroogeConfig config = new ScroogeConfig(
+                destination,
+                List$.MODULE$.empty(),
+                JavaConverters.asScala(thriftFiles).toList(),
+                JavaConverters.asScala(_opts).toSet(),
+                Map$.MODULE$.empty(),
+                false,
+                true,
+                false,
+                true,
+                Seq$.MODULE$.empty(),
+                opt,
+                false,
+                _lang,
+                CompilerDefaults.defaultNamespace(),
+                false,
+                false,
+                true);
+        Compiler compiler = new Compiler(config);
 
         compiler.run();
     }
