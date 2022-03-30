@@ -82,7 +82,7 @@ public class ScroogeCompileTask extends DefaultTask {
                 false,
                 true,
                 false,
-                true,
+                false,
                 Seq$.MODULE$.empty(),
                 opt,
                 false,
